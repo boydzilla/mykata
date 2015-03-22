@@ -18,6 +18,14 @@ namespace mykata
             bowlingGame = new BowlingGame();
         }
 
+        private void RollBalls(int num, int pins)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                bowlingGame.Roll(pins);
+            }
+        }
+
         [Test]
         public void TestNothingAssertTrue()
         {
@@ -27,11 +35,9 @@ namespace mykata
         [Test]
         public void TestGutterGame()
         {
-            
-            for (int i = 0; i < 20; i++)
-            {
-                bowlingGame.Roll(0);
-            }
+            int num = 20;
+            int pins = 0;
+            RollBalls(num, pins);
             Assert.AreEqual(0, bowlingGame.Score());
         }
 
