@@ -35,19 +35,14 @@ namespace mykata
         [Test]
         public void TestGutterGame()
         {
-            int num = 20;
-            int pins = 0;
-            RollBalls(num, pins);
+            RollBalls(20, 0);
             Assert.AreEqual(0, bowlingGame.Score());
         }
 
         [Test]
         public void TestAllOnesGame()
         {
-            for (int i = 0; i < 20; i++) 
-            {
-                bowlingGame.Roll(1);
-            }
+            RollBalls(20, 1);
             Assert.AreEqual(20, bowlingGame.Score());
         }
     }
