@@ -33,5 +33,16 @@ namespace mykata
             }
             Assert.AreEqual(0, bowlingGame.score());
         }
+
+        [Test]
+        public void TestAllOnesGame()
+        {
+            BowlingGame bowlingGame = new BowlingGame();
+            for (int i = 0; i < 20; i++) 
+            {
+                bowlingGame.roll(1);
+            }
+            Assert.AreEqual(20, bowlingGame.score());
+        }
     }
 }
