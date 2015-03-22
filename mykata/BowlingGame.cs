@@ -19,7 +19,7 @@ namespace mykata
 
         public int score()
         {
-            return -1;
+            return 0;
         }
 
     }
