@@ -25,25 +25,45 @@ namespace mykata
             return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
         }
 
+        private bool CheckIfStrike(int frameIndex)
+        {
+            return rolls[frameIndex] == 10;
+        }
+
+        private int SumOfRollsInAFrame(int frameIndex)
+        {
+            return rolls[frameIndex] + rolls[frameIndex + 1];
+        }
+
+        private int TotalOfStrike(int frameIndex)
+        {
+            return rolls[frameIndex + 1] + rolls[frameIndex + 2];
+        }
+
+        private int TotalOfSpare(int frameIndex)
+        {
+            return rolls[frameIndex + 2];
+        }
+
         public int Score()
         {
             int score = 0;
             int frameIndex = 0;
             for (int frame = 0; frame < 10; frame++)
             {
-                if (rolls[frameIndex] == 10)
+                if (CheckIfStrike(frameIndex))
                 {
-                    score += 10 + rolls[frameIndex + 1] + rolls[frameIndex + 2];
+                    score += 10 + TotalOfStrike(frameIndex);
                     frameIndex++;
                 }
                 else if (CheckIfSpare(frameIndex))
                 {
-                    score += 10 + rolls[frameIndex + 2];
+                    score += 10 + TotalOfSpare(frameIndex);
                     frameIndex += 2;
                 }
                 else
                 {
-                    score += rolls[frameIndex] + rolls[frameIndex + 1];
+                    score += SumOfRollsInAFrame(frameIndex);
                     frameIndex += 2;
                 }
             }
