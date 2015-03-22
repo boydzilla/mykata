@@ -26,10 +26,14 @@ namespace mykata
             }
         }
 
-        private void RollSpare()
+        private void RollSpare(int firstBall, int secondBall)
         {
-            bowlingGame.Roll(5);
-            bowlingGame.Roll(5);
+            bowlingGame.Roll(firstBall);
+            bowlingGame.Roll(secondBall);
+        }
+        private void RollStrike()
+        {
+            bowlingGame.Roll(10);
         }
 
         [Test]
@@ -56,7 +60,7 @@ namespace mykata
         [Test]
         public void TestSingleSpareGame()
         {
-            RollSpare();
+            RollSpare(5, 5);
             bowlingGame.Roll(3);
             RollBalls(17, 0);
             Assert.AreEqual(16, bowlingGame.Score());
@@ -65,7 +69,7 @@ namespace mykata
         [Test]
         public void TestSingleStrike()
         {
-            bowlingGame.Roll(10);
+            RollStrike();
             bowlingGame.Roll(3);
             bowlingGame.Roll(4);
             RollBalls(16, 0);
@@ -77,6 +81,38 @@ namespace mykata
         {
             RollBalls(12, 10);
             Assert.AreEqual(300, bowlingGame.Score());
+        }
+
+        [Test]
+        public void TestMultipleStrikesAndSparesGameScore()
+        {
+            RollSpare(4, 6);
+
+            RollStrike();
+
+            bowlingGame.Roll(7);
+            bowlingGame.Roll(2);
+            
+            RollSpare(8, 2);
+            
+            bowlingGame.Roll(4);
+            bowlingGame.Roll(5);
+            
+            RollStrike();
+            
+            bowlingGame.Roll(4);
+            bowlingGame.Roll(2);
+            
+            RollStrike();
+            
+            bowlingGame.Roll(8);
+            bowlingGame.Roll(1);
+
+            RollStrike();
+            bowlingGame.Roll(6);
+            bowlingGame.Roll(3);
+
+            Assert.AreEqual(140, bowlingGame.Score());
         }
     }
 }
