@@ -8,18 +8,20 @@ namespace mykata
 {
     public class BowlingGame
     {
+        int score = 0;
+
         static void Main(string[] args)
         {
             
         }
-        public void roll(int pins)
+        public void Roll(int pins)
         {
-
+            score += pins;
         }
 
-        public int score()
+        public int Score()
         {
-            return 0;
+            return score;
         }
 
     }

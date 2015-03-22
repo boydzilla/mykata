@@ -10,10 +10,12 @@ namespace mykata
     [TestFixture]
     public class BowlingGameUnitTest
     {
+        BowlingGame bowlingGame;
+
         [SetUp]
         public void Init()
         {
-
+            bowlingGame = new BowlingGame();
         }
 
         [Test]
@@ -25,24 +27,22 @@ namespace mykata
         [Test]
         public void TestGutterGame()
         {
-            BowlingGame bowlingGame = new BowlingGame();
-
+            
             for (int i = 0; i < 20; i++)
             {
-                bowlingGame.roll(0);
+                bowlingGame.Roll(0);
             }
-            Assert.AreEqual(0, bowlingGame.score());
+            Assert.AreEqual(0, bowlingGame.Score());
         }
 
         [Test]
         public void TestAllOnesGame()
         {
-            BowlingGame bowlingGame = new BowlingGame();
             for (int i = 0; i < 20; i++) 
             {
-                bowlingGame.roll(1);
+                bowlingGame.Roll(1);
             }
-            Assert.AreEqual(20, bowlingGame.score());
+            Assert.AreEqual(20, bowlingGame.Score());
         }
     }
 }
