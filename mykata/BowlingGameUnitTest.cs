@@ -71,5 +71,12 @@ namespace mykata
             RollBalls(16, 0);
             Assert.AreEqual(24, bowlingGame.Score());
         }
+
+        [Test]
+        public void Test300Game()
+        {
+            RollBalls(12, 10);
+            Assert.AreEqual(300, bowlingGame.Score());
+        }
     }
 }
