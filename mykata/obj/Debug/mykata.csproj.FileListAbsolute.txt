@@ -1,1 +1,7 @@
 E:\Development\Github\mykata\mykata\bin\Debug\mykata.exe.config
+E:\Development\Github\mykata\mykata\bin\Debug\mykata.exe
+E:\Development\Github\mykata\mykata\bin\Debug\mykata.pdb
+E:\Development\Github\mykata\mykata\bin\Debug\nunit.framework.dll
+E:\Development\Github\mykata\mykata\bin\Debug\nunit.framework.xml
+E:\Development\Github\mykata\mykata\obj\Debug\mykata.exe
+E:\Development\Github\mykata\mykata\obj\Debug\mykata.pdb
