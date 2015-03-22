@@ -21,5 +21,11 @@ namespace mykata
         {
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void TestGutterGame()
+        {
+            BowlingGame bowlingGame = new BowlingGame();
+        }
     }
 }
