@@ -49,6 +49,7 @@ namespace mykata
         [Test]
         public void TestAllFoursGame()
         {
+            RollBalls(20, 4);
             Assert.AreEqual(80, bowlingGame.Score());
         }
     }
