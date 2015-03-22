@@ -52,5 +52,11 @@ namespace mykata
             RollBalls(20, 4);
             Assert.AreEqual(80, bowlingGame.Score());
         }
+
+        [Test]
+        public void TestSingleSpareGame()
+        {
+            Assert.AreEqual(16, bowlingGame.Score());
+        }
     }
 }
