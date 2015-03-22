@@ -26,6 +26,12 @@ namespace mykata
         public void TestGutterGame()
         {
             BowlingGame bowlingGame = new BowlingGame();
+
+            for (int i = 0; i < 20; i++)
+            {
+                bowlingGame.roll(0);
+            }
+            Assert.AreEqual(0, bowlingGame.score());
         }
     }
 }
