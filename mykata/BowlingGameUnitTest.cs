@@ -33,12 +33,6 @@ namespace mykata
         }
 
         [Test]
-        public void TestNothingAssertTrue()
-        {
-            Assert.IsTrue(true);
-        }
-
-        [Test]
         public void TestGutterGame()
         {
             RollBalls(20, 0);
@@ -68,5 +62,14 @@ namespace mykata
             Assert.AreEqual(16, bowlingGame.Score());
         }
 
+        [Test]
+        public void TestSingleStrike()
+        {
+            bowlingGame.Roll(10);
+            bowlingGame.Roll(3);
+            bowlingGame.Roll(4);
+            RollBalls(16, 0);
+            Assert.AreEqual(24, bowlingGame.Score());
+        }
     }
 }
