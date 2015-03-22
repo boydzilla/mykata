@@ -26,6 +26,12 @@ namespace mykata
             }
         }
 
+        private void RollSpare()
+        {
+            bowlingGame.Roll(5);
+            bowlingGame.Roll(5);
+        }
+
         [Test]
         public void TestNothingAssertTrue()
         {
@@ -56,11 +62,11 @@ namespace mykata
         [Test]
         public void TestSingleSpareGame()
         {
-            bowlingGame.Roll(5);
-            bowlingGame.Roll(5);
+            RollSpare();
             bowlingGame.Roll(3);
             RollBalls(17, 0);
             Assert.AreEqual(16, bowlingGame.Score());
         }
+
     }
 }
